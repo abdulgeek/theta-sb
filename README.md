@@ -2,6 +2,9 @@
 
 1. Run mariadb on docker
 
+  * cd {project location}
+
+  * run docker script
   ```
   docker run --rm \
   --name theta-db \
