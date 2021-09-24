@@ -6,8 +6,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.jdbc.Sql;
 
 @SpringBootTest
+@Sql(scripts = {"/sql/delete-data-sample.sql"})
 public class PersonRepositoryTests {
     @Autowired
     private PersonRepository personRepository;
@@ -20,7 +22,6 @@ public class PersonRepositoryTests {
     @Test
     public void testSavePerson() {
         Person person = new Person();
-        person.setId(2L);
         person.setMapData("{}");
         person.setName("Test User");
         person.setEmail("user@mail.com");

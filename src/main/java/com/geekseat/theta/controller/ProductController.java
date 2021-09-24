@@ -1,6 +1,6 @@
 package com.geekseat.theta.controller;
 
-import com.geekseat.theta.service.PersonService;
+import com.geekseat.theta.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,13 +9,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/person")
-public class PersonController {
+@RequestMapping("/product")
+public class ProductController {
+
     @Autowired
-    private PersonService service;
+    ProductRepository productRepository;
 
     @GetMapping("/list")
     public ResponseEntity<?> list() {
-        return new ResponseEntity<>(service.findAll(), HttpStatus.OK);
+        return new ResponseEntity<>(productRepository.findAll(), HttpStatus.OK);
     }
 }

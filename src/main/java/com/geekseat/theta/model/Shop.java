@@ -1,6 +1,6 @@
 package com.geekseat.theta.model;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -27,7 +27,7 @@ public class Shop extends BaseModel {
     private String name;
 
     @OneToMany(mappedBy = "shop")
-    @JsonManagedReference
+    @JsonIgnoreProperties("shop")
     private List<Product> additionalProductList = new ArrayList<>();
 
     @Transient

@@ -27,7 +27,6 @@ public class BaseService {
         }
         if (entity.getMapData() != null && !entity.getMapData().isEmpty()) {
             entity.setMap(mapper.readValue(entity.getMapData(), HashMap.class));
-            entity.setMapData(null);
         }
     }
 

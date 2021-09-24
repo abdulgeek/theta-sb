@@ -8,10 +8,16 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.jdbc.Sql;
 
 @SpringBootTest
-@Sql(scripts = {"/sql/delete-data-sample.sql"})
+@Sql(scripts = {"/sql/delete-data-sample.sql", "/sql/insert-data-sample.sql"})
 public class ShopRepositoryTests {
     @Autowired
     private ShopRepository shopRepository;
+
+    @Test
+    public void testGetPerson() {
+        Iterable<Shop> all = shopRepository.findAll();
+        Assertions.assertNotNull(all);
+    }
 
     @Test
     public void testSaveShop() {
