@@ -18,7 +18,7 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "id_shop", nullable = false)
     @JsonIgnoreProperties("additionalProductList")
     private Shop shop;

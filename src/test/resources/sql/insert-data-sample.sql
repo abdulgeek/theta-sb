@@ -9,10 +9,6 @@ values (0, '{}', 'Dev Test', 'duomail@mailinator.com', '$2a$12$mKW7whIhaeJqes14y
 -- shop
 insert into shop (id, map_data, slug, name, creator, editor, created_by, created, updated_by, updated)
 values (1, '{}', 'slug-001', 'Shop 001', null, null, 'User test', current_timestamp, 'User Test', current_timestamp);
-insert into shop (id, map_data, slug, name, creator, editor, created_by, created, updated_by, updated)
-values (2, '{}', 'slug-002', 'Shop 002', null, null, 'User test', current_timestamp, 'User Test', current_timestamp);
-insert into shop (id, map_data, slug, name, creator, editor, created_by, created, updated_by, updated)
-values (3, '{}', 'slug-003', 'Shop 003', null, null, 'User test', current_timestamp, 'User Test', current_timestamp);
 
 -- product
 insert into product (id, id_shop, slug, name, quantity)

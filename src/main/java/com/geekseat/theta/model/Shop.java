@@ -26,7 +26,7 @@ public class Shop extends BaseModel {
     @NotEmpty
     private String name;
 
-    @OneToMany(mappedBy = "shop")
+    @OneToMany(mappedBy = "shop", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JsonIgnoreProperties("shop")
     private List<Product> additionalProductList = new ArrayList<>();
 

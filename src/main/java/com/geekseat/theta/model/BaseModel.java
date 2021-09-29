@@ -53,7 +53,6 @@ public class BaseModel {
     @Transient
     protected Map<String, Object> map = new HashMap<>();
 
-
     @Transient
     protected Map<String, Object> transitMap = new HashMap<>();
 
