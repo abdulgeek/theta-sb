@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.jdbc.Sql;
 
+import java.util.HashMap;
+
 @SpringBootTest
 @Sql(scripts = {"/sql/delete-data-sample.sql", "/sql/insert-data-sample.sql"})
 public class ShopRepositoryTests {
@@ -22,8 +24,12 @@ public class ShopRepositoryTests {
     @Test
     public void testSaveShop() {
         Shop shop = new Shop();
-        shop.setName("Shop test");
-        shop.setSlug("Slug test");
+        shop.setMap(new HashMap<>());
+        shop.setTransitMap(new HashMap<>());
+        shop.setSlug("Slug test repository");
+        shop.setName("Shop test repository");
+        shop.setAdditionalProductList(null);
+        shop.setMainProduct(null);
         Shop save = shopRepository.save(shop);
         Assertions.assertNotNull(save);
     }
