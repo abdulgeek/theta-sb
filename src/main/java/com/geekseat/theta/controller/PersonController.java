@@ -1,6 +1,7 @@
 package com.geekseat.theta.controller;
 
 import com.geekseat.theta.service.PersonService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,9 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/person")
+@RequiredArgsConstructor
 public class PersonController {
-    @Autowired
-    PersonService service;
+
+    private final PersonService service;
 
     @GetMapping("/list")
     public ResponseEntity<?> list() {

@@ -2,7 +2,7 @@ package com.geekseat.theta.controller;
 
 import com.geekseat.theta.model.Shop;
 import com.geekseat.theta.repository.ShopRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -12,10 +12,10 @@ import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/shop")
+@RequiredArgsConstructor
 public class ShopController {
 
-    @Autowired
-    ShopRepository shopRepository;
+    private final ShopRepository shopRepository;
 
     @GetMapping("/list")
     public ResponseEntity<?> list() {
